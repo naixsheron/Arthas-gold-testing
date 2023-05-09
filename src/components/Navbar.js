@@ -32,7 +32,7 @@ const Nav = () => {
             );
           })}
           {myUser && (
-            <li>
+            <li className="checkout-nav">
               <Link to="/checkout">checkout</Link>
             </li>
           )}
@@ -77,6 +77,10 @@ const NavContainer = styled.nav`
   }
   .cart-btn-wrapper {
     display: none;
+  }
+  .checkout-nav {
+    border: 2px solid var(--clr-grey-1);
+    border-radius: 10%;
   }
   @media (min-width: 992px) {
     .nav-toggle {
