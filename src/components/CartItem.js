@@ -19,7 +19,8 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
         <div>
           <h5 className="name">{name}</h5>
           <p className="color">
-            year : <span style={{ background: color }}></span>
+            year :{" "}
+            <span style={{ background: "var(--clr-primary-4)" }}>{color}</span>
           </p>
           <h5 className="price-small">{formatPrice(price)}</h5>
         </div>
@@ -83,9 +84,12 @@ const Wrapper = styled.article`
     justify-content: flex-start;
     span {
       display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
+      width: 2.7rem;
+      height: 1.25rem;
       background: red;
+      color: white;
+      display: flex;
+      justify-content: center;
       margin-left: 0.5rem;
       border-radius: var(--radius);
     }
@@ -142,8 +146,8 @@ const Wrapper = styled.article`
     .color {
       font-size: 0.85rem;
       span {
-        width: 0.75rem;
-        height: 0.75rem;
+        width: 2.75rem;
+        height: 1.25rem;
       }
     }
     grid-template-columns: 1fr 1fr 1fr 1fr auto;

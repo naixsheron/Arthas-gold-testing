@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { PageHero } from "../components";
 import aboutImg from "../assets/hero6.jpg";
+import { Link } from "react-router-dom";
+import { FiLinkedin } from "react-icons/fi";
 
 const AboutPage = () => {
   return (
@@ -24,6 +26,14 @@ const AboutPage = () => {
               Join us on our journey and discover the beauty and wonder of rare
               coins with Arthas the lich king.
             </p>
+            <Link
+              to="https://www.linkedin.com/in/florin-gabor-aa9839260/"
+              className="btn btn-linkedin"
+            >
+              <span className="hire">
+                hire me <FiLinkedin />
+              </span>
+            </Link>
           </div>
         </article>
       </Wrapper>
@@ -40,6 +50,22 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     height: 500px;
     object-fit: cover;
+  }
+  .btn-linkedin {
+    display: flex;
+    max-width: 100%;
+    background: var(--clr-primary-6);
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    height: 45px;
+  }
+  .btn-linkedin:hover {
+    background: var(--clr-primary-9);
+  }
+  .hire {
+    font-size: 1.6rem;
+    font-weight: 700;
   }
   p {
     line-height: 2;

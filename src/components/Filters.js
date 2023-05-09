@@ -102,12 +102,23 @@ const Filters = () => {
                     className={`${
                       color === c ? "active color-btn" : "color-btn"
                     }`}
-                    style={{ backgroundColor: " var(--clr-primary-4) " }}
+                    style={{ backgroundColor: "var(--clr-primary-4)" }}
                     data-color={c}
-                    onClick={updateFilters}
+                    onClick={(event) => {
+                      updateFilters(event);
+                    }}
                   >
                     {color === c ? <FaCheck /> : null}
-                    <span style={{ backgroundColor: " var(--clr-primary-4) " }}>
+                    <span
+                      style={{ backgroundColor: "var(--clr-primary-4)" }}
+                      onClick={(event) => {
+                        if (event.target.tagName.toLowerCase() === "span") {
+                          event.stopPropagation();
+                          const button = event.target.closest("button");
+                          button.click();
+                        }
+                      }}
+                    >
                       {c}
                     </span>
                   </button>
@@ -196,8 +207,8 @@ const Wrapper = styled.section`
 
   .color-btn {
     display: inline-block;
-    width: 5rem;
-    height: 2.6rem;
+    width: 4rem;
+    height: 2.2rem;
     border-radius: 10%;
     background: #222;
     margin-right: 0.5rem;
@@ -210,9 +221,12 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     svg {
-      font-size: 0.5rem;
+      font-size: 0.8rem;
       color: white;
     }
+  }
+  .color-btn:hover {
+    opacity: 0.7;
   }
 
   .all-btn {

@@ -49,8 +49,13 @@ const AddToCart = ({ product }) => {
                 }}
               >
                 {mainColor === color ? (
+                  <span style={{ color: "white" }}>
+                    <FaCheck />
+                    {color}
+                  </span>
+                ) : (
                   <span style={{ color: "white" }}>{color}</span>
-                ) : null}
+                )}
               </button>
             );
           })}
@@ -81,6 +86,7 @@ const Wrapper = styled.section`
     grid-template-columns: 125px 1fr;
     align-items: center;
     margin-bottom: 1rem;
+
     span {
       text-transform: capitalize;
       font-weight: 700;
@@ -97,15 +103,19 @@ const Wrapper = styled.section`
     background: #222;
     margin-right: 0.5rem;
     border: none;
-    color: white;
+    color: var(--clr-white);
     cursor: pointer;
     opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
-    svg {
-      font-size: 0.75rem;
+    span {
       color: var(--clr-white);
+    }
+    svg {
+      font-size: 0.95rem;
+      color: var(--clr-white);
+      margin-right: 6px;
     }
   }
   .active {
