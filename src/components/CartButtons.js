@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   .cart-btn {
     color: var(--clr-grey-1);
     font-size: 1.5rem;
+
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
@@ -83,14 +84,20 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     background: transparent;
-    border-color: transparent;
+    padding: 0 5px;
+    border-color: var(--clr-grey-1);
+    border-radius: 10%;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
+    transition: transform 0.2s ease-out;
     svg {
       margin-left: 5px;
     }
+  }
+  .auth-btn:hover {
+    transform: scale(1.05);
   }
 `;
 export default CartButtons;
