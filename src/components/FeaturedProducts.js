@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Error from "./Error";
 import Loading from "./Loading";
 import Product from "./Product";
-// mai
+
 const FeaturedProducts = () => {
   const {
     products_loading: loading,
